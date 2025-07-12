@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced Alarm Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>⏰ Smart Alarm Clock</h1>
+    
+    <!-- Live Clock -->
+    <div id="clock">--:--:--</div>
+
+    <!-- Alarm Input -->
+    <div class="alarm-form">
+      <input type="time" id="alarm-time" required />
+      <input type="text" id="alarm-label" placeholder="Alarm label" />
+      <button onclick="setAlarm()">Set Alarm</button>
+    </div>
+
+    <!-- Alarm List -->
+    <div class="alarm-list" id="alarm-list"></div>
+
+    <!-- Dark Mode Button -->
+    <button id="toggle-dark">🌙 Dark Mode</button>
+  </div>
+
+  <!-- 🔔 Alarm Modal -->
+  <div id="alarm-modal" class="modal hidden">
+    <div class="modal-content">
+      <p id="modal-label">⏰ Alarm!</p>
+      <div class="modal-buttons">
+        <button onclick="stopAlarm()">Stop</button>
+        <button onclick="snoozeAlarm()">Snooze</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alarm Sound -->
+  <audio id="alarm-audio" src="alarm.mp3" preload="auto"></audio>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
